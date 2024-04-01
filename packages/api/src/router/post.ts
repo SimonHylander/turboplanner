@@ -31,7 +31,16 @@ export const postRouter = {
   create: protectedProcedure
     .input(CreatePostSchema)
     .mutation(({ ctx, input }) => {
-      return ctx.db.insert(schema.post).values(input);
+      const userId = ctx.session.user?.id;
+
+      if (!userId) {
+        throw new Error("unauthorized");
+      }
+
+      return ctx.db.insert(schema.post).values({
+        ...input,
+        userId,
+      });
     }),
 
   delete: protectedProcedure.input(z.number()).mutation(({ ctx, input }) => {

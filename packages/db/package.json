@@ -22,8 +22,8 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@planetscale/database": "^1.16.0",
-    "drizzle-orm": "^0.30.4"
+    "drizzle-orm": "^0.30.6",
+    "mysql2": "^3.9.3"
   },
   "devDependencies": {
     "@acme/eslint-config": "*",
@@ -32,7 +32,7 @@
     "dotenv-cli": "^7.4.1",
     "drizzle-kit": "^0.20.14",
     "eslint": "^8.57.0",
-    "mysql2": "^3.9.2",
+    "mysql2": "^3.9.3",
     "prettier": "^3.2.5",
     "typescript": "^5.4.3"
   },
